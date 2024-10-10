@@ -1,6 +1,9 @@
 from flask import Flask, render_template
+
+#Import mého blueprintu z modulu general
+from general.general import general_bp
+
 app = Flask(__name__)
 
-@app.route("/")
-def home():
-    return render_template("index.html")
+#Registrace blueprintu - takto o něm bude Flask vědět
+app.register_blueprint(general_bp)
