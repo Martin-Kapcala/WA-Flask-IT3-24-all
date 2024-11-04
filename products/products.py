@@ -8,4 +8,4 @@ products_bp = Blueprint('products_bp', __name__,
 #Musíme ještě upravit!!!
 @products_bp.route("/")
 def home():
-    return render_template("/detail.html")
+    return render_template("/products.html")
