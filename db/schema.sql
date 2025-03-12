@@ -18,3 +18,17 @@ CREATE TABLE cart (
   quantity INTEGER NOT NULL,
   FOREIGN KEY (userId) REFERENCES user(id)
 );
+
+
+-- Vložení cvičných záznamů do tabulky user
+INSERT INTO user (firstName, lastName, username, password, isAdmin) VALUES
+('Martin', 'Kapcala', 'martinkap', 'password123', 1),
+('John', 'Doe', 'johndoe', 'password123', 0),
+('Jane', 'Smith', 'janesmith', 'password456', 1),
+('Alice', 'Johnson', 'alicej', 'password789', 0);
+
+-- Vložení cvičných záznamů do tabulky cart
+INSERT INTO cart (userId, itemId, quantity) VALUES
+(1, 101, 2),
+(2, 102, 1),
+(3, 103, 5);
