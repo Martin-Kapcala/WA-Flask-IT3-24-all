@@ -25,9 +25,14 @@ def close_db(e=None):
 def init_db():
     db = get_db()
 
-    with current_app.open_resource('schema.sql') as f:
-        db.executescript(f.read().decode('utf8'))
+#Vrátí seznam všech uživatelů z databáze   
+def get_users():
 
+    db = get_db()
+
+    users = db.execute("SELECT * FROM user").fetchall()
+
+    return users
 
 @click.command('init-db')
 def init_db_command():
